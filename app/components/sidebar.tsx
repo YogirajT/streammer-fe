@@ -1,12 +1,10 @@
 import { faPause, faPlay, faRefresh, faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useContext } from "react"
-import { AppContext } from "../contexts/AppContext"
-
+import { useAppContext } from "../contexts/app-provider";
 
 function SideBar() {
 
-  const { state } = useContext(AppContext);
+  const { state } = useAppContext();
 
   console.log(state)
   return <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useReducer, useState } from 'react';
+import React, { useContext, useReducer } from 'react';
 
 type AppState = {
   sidebarOpen: boolean
@@ -31,7 +31,7 @@ const appContextReducer = (state: AppState, action: SidebarToggleAction) => {
   }
 };
 
-const AppStateProvider = (props: React.PropsWithChildren) => {
+export const AppProvider = (props: React.PropsWithChildren) => {
 
   const [state, dispatch] = useReducer(appContextReducer, defaultAppState);
 
@@ -44,4 +44,6 @@ const AppStateProvider = (props: React.PropsWithChildren) => {
   );
 }
 
-export { AppContext, AppStateProvider };
+export function useAppContext() {
+  return useContext(AppContext);
+}
