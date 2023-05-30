@@ -10,7 +10,7 @@ type ProviderProps = {
   toggleSidebar: () => void
 }
 
-const defaultAppState: AppState = { sidebarOpen: false };
+const defaultAppState: AppState = { sidebarOpen: true };
 
 const AppContext = React.createContext<ProviderProps>({ state: defaultAppState, toggleSidebar: () => {} });
 
