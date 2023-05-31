@@ -1,3 +1,4 @@
+"use client";
 import { faPause, faPlay, faRefresh, faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppContext } from "../contexts/app-provider";
@@ -7,7 +8,7 @@ function SideBar() {
 
   const { state } = useAppContext();
 
-  return <div id="drawer-navigation" className={clsx("fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800", state.sidebarOpen && "transform-none")} aria-labelledby="drawer-navigation-label">
+  return <div id="drawer-navigation" className={clsx("flex-shrink-0 top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800", state.sidebarOpen && "transform-none")} aria-labelledby="drawer-navigation-label">
     <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul className="space-y-2 font-medium">
         <li>

@@ -1,19 +1,16 @@
-"use client";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Image from 'next/image'
 import VideoStream from './video-stream';
 import Dashboard from './components/dashboard';
 import SideBar from './components/sidebar';
-import { AppProvider } from './contexts/app-provider';
 
 config.autoAddCss = false
 
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-0">
-      <AppProvider>
+    <main className="flex overflow-x-hidden h-screen">
         <SideBar />
         <Dashboard>
           <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -32,8 +29,7 @@ export default function Home() {
               priority
             />
           </div>
-        </Dashboard>
-      </AppProvider>
+      </Dashboard>
     </main>
   )
 }
