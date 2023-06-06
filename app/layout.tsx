@@ -2,6 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import ThemeProvider from './contexts/theme-provider'
 import { AppProvider } from './contexts/app-provider'
+import SideBar from './components/sidebar'
+import Dashboard from './components/dashboard'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,8 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppProvider>
-        <ThemeProvider>
-          {children}
+          <ThemeProvider>
+            <main className="flex overflow-x-hidden h-screen">
+              <SideBar />
+              <Dashboard>
+                {children}
+              </Dashboard>
+            </main>
           </ThemeProvider>
         </AppProvider>
       </body>
